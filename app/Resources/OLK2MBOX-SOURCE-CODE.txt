@@ -1,0 +1,18 @@
+OLK2MBOX Corresponding Source
+Artifact-Version: 2.0.1
+Release-Date: 2026-09-09
+Stability: Stable
+Change-Summary: Identify the consolidated clean-root corresponding source for app release 2.0.0.
+SPDX-FileCopyrightText: 2026 igp76
+SPDX-License-Identifier: GPL-3.0-or-later
+
+OLK2MBOX 2.0.0 and its embedded converter 2.0.0 are licensed
+under the GNU General Public License, version 3 or (at your option) any
+later version.
+
+Complete corresponding source for this binary release:
+https://github.com/igp76/OLK2MBOX/tree/app-v2.0.0
+
+The exact source archive is also supplied by GitHub on the app-v2.0.0
+release page. See Licenses/GPL-3.0.txt for the complete license text and
+Licenses/THIRD_PARTY_NOTICES.en-US.md for third-party components.

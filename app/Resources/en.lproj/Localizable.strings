@@ -1,0 +1,58 @@
+/*
+ Artifact-Version: 2.0.0
+ Release-Date: 2026-09-06
+ Stability: Stable
+ Change-Summary: Update stable English resources for OLK2MBOX 2.0.0.
+ SPDX-FileCopyrightText: 2026 igp76
+ SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+"Ready" = "Ready";
+"Choose Outlook profile" = "Choose Outlook profile";
+"Select the Main Profile folder or its Data folder." = "Select the Main Profile folder or its Data folder.";
+"Choose" = "Choose";
+"Profile selected" = "Profile selected";
+"Choose output folder" = "Choose output folder";
+"Select where the MBOX hierarchy will be created." = "Select where the MBOX hierarchy will be created.";
+"Output selected" = "Output selected";
+"The embedded converter is missing or not executable." = "The embedded converter is missing or not executable.";
+"Cannot start" = "Cannot start";
+"Starting app %@ with converter %@." = "Starting app %@ with converter %@.";
+"Converting…" = "Converting…";
+"Conversion completed" = "Conversion completed";
+"The conversion completed successfully." = "The conversion completed successfully.";
+"Conversion stopped" = "Conversion stopped";
+"The conversion was stopped." = "The conversion was stopped.";
+"Conversion failed" = "Conversion failed";
+"The converter exited with status %d." = "The converter exited with status %d.";
+"Stopping…" = "Stopping…";
+"Embedded converter unavailable" = "Embedded converter unavailable";
+"Outlook profile" = "Outlook profile";
+"Select Main Profile or Data" = "Select Main Profile or Data";
+"MBOX destination" = "MBOX destination";
+"Select an output folder" = "Select an output folder";
+"Choose…" = "Choose…";
+"Options" = "Options";
+"Include attachments" = "Include attachments";
+"Continue after damaged messages" = "Continue after damaged messages";
+"Exclude hidden messages" = "Exclude hidden messages";
+"Replace existing MBOX files" = "Replace existing MBOX files";
+"Exclude messages marked for deletion" = "Exclude messages marked for deletion";
+"Open destination" = "Open destination";
+"Stop" = "Stop";
+"Start conversion" = "Start conversion";
+"Convert legacy Outlook for Mac profiles into standard MBOX files." = "Convert legacy Outlook for Mac profiles into standard MBOX files.";
+"Cannot create logs" = "Cannot create logs";
+"Preparing conversion…" = "Preparing conversion…";
+"%lld of %lld messages processed" = "%lld of %lld messages processed";
+"Elapsed: %@" = "Elapsed: %@";
+"Elapsed: %@ · Estimated remaining: %@" = "Elapsed: %@ · Estimated remaining: %@";
+"Concise" = "Concise";
+"Normal" = "Normal";
+"Detailed" = "Detailed";
+"Extreme" = "Extreme";
+"Log detail" = "Log detail";
+"Log output will appear here." = "Log output will appear here.";
+"Follow latest output" = "Follow latest output";
+"Jump to latest" = "Jump to latest";
+"Earlier output remains available in the execution log." = "Earlier output remains available in the execution log.";

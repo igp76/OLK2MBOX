@@ -1,0 +1,42 @@
+# Artifact-Version: 3.0.0
+# Release-Date: 2026-09-09
+# Stability: Stable
+# Change-Summary: Test the CLI in the consolidated single-branch repository.
+# SPDX-FileCopyrightText: 2026 igp76
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: OLK2MBOX Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: olk2mbox-tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12", "3.14"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run unit tests
+        run: python -m unittest discover -s cli/tests -v

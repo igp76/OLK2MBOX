@@ -1,0 +1,50 @@
+# Artifact-Version: 2.0.1
+# Release-Date: 2026-09-08
+# Stability: Stable
+# Change-Summary: Remove the obsolete local reference-app exception.
+# SPDX-FileCopyrightText: 2026 igp76
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Outlook profiles and private mail data
+**/Outlook.sqlite
+**/Outlook.sqlite-*
+**/*.olk15Message
+**/*.olk15MsgAttachment
+**/*.olk15MsgSource
+**/Main Profile/
+
+# Generated exports
+*.mbox
+*.mbox.*
+conversion-manifest.json
+OLK2MBOX-conversion-manifest.json
+converted_mbox/
+converted_email/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Application builds
+.build/
+.build-venv/
+build/
+dist/
+release/
+*.spec
+DerivedData/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary and partial files
+*.partial
+*.tmp
+*.log

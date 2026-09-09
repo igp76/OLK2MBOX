@@ -1,0 +1,69 @@
+# Artifact-Version: 3.0.0
+# Release-Date: 2026-09-09
+# Stability: Stable
+# Change-Summary: Build the app from the consolidated main branch and CLI engine.
+# SPDX-FileCopyrightText: 2026 igp76
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: Build OLK2MBOX Apple Silicon App
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: olk2mbox-app-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-arm64:
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.14"
+
+      - name: Run converter unit tests
+        run: python -m unittest discover -s cli/tests -v
+
+      - name: Install pinned build dependency
+        run: >-
+          python -m pip install --only-binary=:all: --require-hashes
+          --requirement app/requirements-build.txt
+
+      - name: Build Apple Silicon application
+        run: ./app/build_olk2mbox.sh --use-current-environment
+
+      - name: Verify Apple Silicon binaries
+        run: |
+          file dist/OLK2MBOX.app/Contents/MacOS/OLK2MBOX | grep arm64
+          file dist/OLK2MBOX.app/Contents/Helpers/olk2mbox | grep arm64
+          codesign --verify --deep --strict --verbose=2 dist/OLK2MBOX.app
+          hdiutil verify dist/OLK2MBOX-2.0.0-arm64.dmg
+          (cd dist && shasum -a 256 -c OLK2MBOX-2.0.0-SHA256SUMS.txt)
+
+      - name: Upload unsigned release inputs
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: OLK2MBOX-2.0.0-arm64-unsigned-inputs
+          path: |
+            dist/OLK2MBOX-2.0.0-arm64.zip
+            dist/OLK2MBOX-2.0.0-arm64.dmg
+            dist/OLK2MBOX-2.0.0-release-manifest.json
+            dist/OLK2MBOX-2.0.0-SHA256SUMS.txt
+          if-no-files-found: error

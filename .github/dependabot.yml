@@ -1,0 +1,33 @@
+# Artifact-Version: 2.0.0
+# Release-Date: 2026-09-09
+# Stability: Stable
+# Change-Summary: Monitor dependencies on the consolidated main branch.
+# SPDX-FileCopyrightText: 2026 igp76
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: main
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Rome
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: deps(actions)
+
+  - package-ecosystem: pip
+    directory: /app
+    target-branch: main
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:30"
+      timezone: Europe/Rome
+    open-pull-requests-limit: 5
+    insecure-external-code-execution: deny
+    commit-message:
+      prefix: deps(python)

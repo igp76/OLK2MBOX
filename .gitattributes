@@ -1,0 +1,11 @@
+# Artifact-Version: 1.0.0
+# Release-Date: 2026-09-06
+# Stability: Stable
+# Change-Summary: Normalize text files and identify generated export formats.
+
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.mbox binary
