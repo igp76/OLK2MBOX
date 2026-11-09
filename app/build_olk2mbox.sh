@@ -1,18 +1,18 @@
 #!/bin/bash
-# Artifact-Version: 2.1.1
-# Release-Date: 2026-09-09
+# Artifact-Version: 2.1.2
+# Release-Date: 2026-11-10
 # Stability: Stable
-# Change-Summary: Build the embedded engine from the consolidated cli source directory.
+# Change-Summary: Read the required PyInstaller version from the pinned build dependencies.
 # SPDX-FileCopyrightText: 2026 igp76
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 set -euo pipefail
 
 APP_VERSION="2.0.0"
-BUILDER_VERSION="2.1.1"
+BUILDER_VERSION="2.1.2"
 ENGINE_VERSION="2.0.0"
-PYINSTALLER_VERSION="6.22.2"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYINSTALLER_VERSION="$(sed -n 's/^pyinstaller==\([^[:space:]]*\).*/\1/p' "$SCRIPT_DIR/requirements-build.txt")"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 BUILD_ROOT="$PROJECT_ROOT/.build/olk2mbox-apple-silicon"
 DIST_ROOT="$PROJECT_ROOT/dist"

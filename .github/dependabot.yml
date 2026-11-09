@@ -1,7 +1,7 @@
-# Artifact-Version: 2.0.0
-# Release-Date: 2026-09-09
+# Artifact-Version: 2.1.0
+# Release-Date: 2026-11-10
 # Stability: Stable
-# Change-Summary: Monitor dependencies on the consolidated main branch.
+# Change-Summary: Group CodeQL action updates to keep initialization and analysis aligned.
 # SPDX-FileCopyrightText: 2026 igp76
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -16,6 +16,10 @@ updates:
       time: "06:00"
       timezone: Europe/Rome
     open-pull-requests-limit: 5
+    groups:
+      codeql:
+        patterns:
+          - "github/codeql-action/*"
     commit-message:
       prefix: deps(actions)
 

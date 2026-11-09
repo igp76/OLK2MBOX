@@ -1,7 +1,7 @@
 ---
 title: "Cronologia delle modifiche — OLK2MBOX"
-document_revision: "3.0.0"
-revision_date: "2026-09-09"
+document_revision: "3.1.0"
+revision_date: "2026-11-10"
 locale: "it-IT"
 status: "Stabile"
 license: "GPL-3.0-or-later"
@@ -12,6 +12,14 @@ license: "GPL-3.0-or-later"
 [English](CHANGELOG.en-US.md) · **Italiano**
 
 Il progetto segue il [Versionamento Semantico](https://semver.org/lang/it/). Questo repository a radice pulita registra intenzionalmente soltanto la generazione di prodotto attualmente supportata.
+
+## Non rilasciato — Manutenzione della compilazione e della sicurezza
+
+- Aggiornare setuptools alla 84.2.1, correggendo GHSA-xmj3-9gf7-h52w, e aggiornare PyInstaller alla 6.22.3 e i relativi hook contribuiti alla 2026.9, mantenendo versioni esatte e hash dei pacchetti.
+- Leggere la versione richiesta di PyInstaller dal file delle dipendenze di compilazione per evitare differenze tra installazione e compilazione.
+- Aggiornare insieme entrambe le azioni CodeQL alla 4.39.3, spostare l’analisi Swift su macOS 15 e raggruppare i futuri aggiornamenti CodeQL in Dependabot.
+- Aggiornare setup-python alla 7.1.0 e upload-artifact alla 7.0.2, mantenendo i riferimenti ai commit completi.
+- Queste modifiche di manutenzione non sostituiscono gli artefatti pubblicati delle release App 2.0.0 o CLI 2.0.0.
 
 ## App 2.0.0 / CLI 2.0.0 — Stabile
 
@@ -41,4 +49,5 @@ Il progetto segue il [Versionamento Semantico](https://semver.org/lang/it/). Que
 
 ## Revisione del documento
 
+- Revisione 3.1.0 — 2026-11-10: documentare la manutenzione non rilasciata delle dipendenze, della compilazione e dei flussi di sicurezza.
 - Revisione 3.0.0 — 2026-09-09: introduce la cronologia a radice pulita per la release corrente consolidata.

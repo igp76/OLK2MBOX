@@ -1,7 +1,7 @@
-# Artifact-Version: 3.0.0
-# Release-Date: 2026-09-09
+# Artifact-Version: 3.0.1
+# Release-Date: 2026-11-10
 # Stability: Stable
-# Change-Summary: Test the CLI in the consolidated single-branch repository.
+# Change-Summary: Update the pinned setup-python action to 7.1.0.
 # SPDX-FileCopyrightText: 2026 igp76
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -34,7 +34,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
           python-version: ${{ matrix.python-version }}
 

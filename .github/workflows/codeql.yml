@@ -1,7 +1,7 @@
-# Artifact-Version: 2.0.0
-# Release-Date: 2026-09-09
+# Artifact-Version: 2.1.0
+# Release-Date: 2026-11-10
 # Stability: Stable
-# Change-Summary: Analyze Actions, Python, and Swift on the consolidated main branch.
+# Change-Summary: Update CodeQL actions together and restore Swift analysis on macOS 15.
 # SPDX-FileCopyrightText: 2026 igp76
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -45,7 +45,7 @@ jobs:
             os: ubuntu-latest
           - language: swift
             build-mode: manual
-            os: macos-14
+            os: macos-15
 
     steps:
       - name: Check out repository
@@ -54,7 +54,7 @@ jobs:
           persist-credentials: false
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4.37.9
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
@@ -68,6 +68,6 @@ jobs:
           -Xswiftc -swift-version -Xswiftc 5
 
       - name: Analyze
-        uses: github/codeql-action/analyze@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4.37.9
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         with:
           category: /language:${{ matrix.language }}

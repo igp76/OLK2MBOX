@@ -1,7 +1,7 @@
 ---
 title: "Changelog — OLK2MBOX"
-document_revision: "3.0.0"
-revision_date: "2026-09-09"
+document_revision: "3.1.0"
+revision_date: "2026-11-10"
 locale: "en-US"
 status: "Stable"
 license: "GPL-3.0-or-later"
@@ -12,6 +12,14 @@ license: "GPL-3.0-or-later"
 **English** · [Italiano](CHANGELOG.it-IT.md)
 
 This project follows [Semantic Versioning](https://semver.org/). This clean-root repository intentionally records only the currently supported product generation.
+
+## Unreleased — Build and security maintenance
+
+- Update setuptools to 84.2.1, addressing GHSA-xmj3-9gf7-h52w, and update PyInstaller to 6.22.3 and its contributed hooks to 2026.9 while retaining exact versions and package hashes.
+- Read the required PyInstaller version from the build requirements to prevent mismatches between installation and compilation.
+- Update both CodeQL actions to 4.39.3 together, move Swift analysis to macOS 15, and group future CodeQL updates in Dependabot.
+- Update setup-python to 7.1.0 and upload-artifact to 7.0.2, preserving full commit pins.
+- These maintenance changes do not replace the published App 2.0.0 or CLI 2.0.0 release assets.
 
 ## App 2.0.0 / CLI 2.0.0 — Stable
 
@@ -41,4 +49,5 @@ This project follows [Semantic Versioning](https://semver.org/). This clean-root
 
 ## Document revision
 
+- Revision 3.1.0 — 2026-11-10: document unreleased dependency, build, and security workflow maintenance.
 - Revision 3.0.0 — 2026-09-09: establish the clean-root changelog for the consolidated current release.
